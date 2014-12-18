@@ -1,1 +1,5 @@
-//sql2level
+//data2level
+
+module.exports= {
+	Writer:require('./lib/writer')
+};

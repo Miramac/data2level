@@ -1,6 +1,6 @@
 var path = require('path') 
 , level = require('level')
-, Writer = require('../lib/writer')
+, Writer = require('../').Writer
 , writer
 , dbPath = path.join(__dirname, 'db/test')
 ;
@@ -20,7 +20,7 @@ function TestData() {
     var allData = [];
     db.createReadStream({
         start : '1'        
-      , end   : '1\x00UnitA\xff' // stop at the last key with the prefix
+      , end   : '1\x00Unit\xff' // stop at the last key with the prefix
     })
     .on('data', function (data) {
       allData.push(data.value);
