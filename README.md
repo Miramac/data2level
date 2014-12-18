@@ -1,6 +1,8 @@
 data2level
 ==========
-
+````
+	npm install data2level --save
+````
 ## Writer
 Insert data to level db with auto generating keys.
 
