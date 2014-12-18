@@ -1,9 +1,12 @@
 var path = require('path') 
 , level = require('level')
-, Writer = require('../').Writer
+, Writer = require('../lib/writer')
 , writer
 , dbPath = path.join(__dirname, 'db/test')
 ;
+
+level.destroy(dbPath);
+
 writer = new Writer({
 	'db': dbPath
 });
@@ -13,10 +16,6 @@ writer.write([ { ID: 1, name: 'UnitA', result: 1000 }, { ID: 1, name: 'UnitB', r
 //TestData()
 function TestData() {
     db = level(dbPath);
-    db.get('1\x00UnitA', function (err, value) {
-        console.log('1~UnitA:', value)
-    });
-    
     var allData = [];
     db.createReadStream({
         start : '1'        
@@ -26,11 +25,11 @@ function TestData() {
       allData.push(data.value);
     })
     .on('close', function () {
+		
       console.log(allData);
     }) 
-    
-    
 }
+
 
 // db.createReadStream({ start: 'UnitA\x00', end: 'UnitA\x00\xff' })
   // .on('data', function (entry) { entries.push(entry) })
