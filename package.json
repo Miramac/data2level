@@ -1,12 +1,18 @@
 {
   "name": "data2level",
-  "version": "0.0.1",
-  "description": "",
+  "version": "0.0.2",
+  "description": "Insert data to level db with auto generating keys.",
   "main": "index.js",
   "scripts": {
     "test": "mocha ./test/mocha.test.writer.js"
   },
-  "author": "",
+  "keywords": [ 
+  ],
+  "author": "Fabian Roloff <fabian.roloff@vocatus.de>",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Miramac/data2level.git"
+  },
   "license": "ISC",
   "dependencies": {
     "level": "^0.18.0"
