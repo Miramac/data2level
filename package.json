@@ -1,10 +1,10 @@
 {
   "name": "data2level",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Insert data to level db with auto generating keys.",
   "main": "index.js",
   "scripts": {
-    "test": "mocha ./test/mocha.test.writer.js"
+    "test": "mocha ./test/mocha.writer.js"
   },
   "keywords": [],
   "author": "Fabian Roloff <fabian.roloff@vocatus.de>",
